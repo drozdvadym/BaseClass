@@ -127,26 +127,8 @@ public:
 ////////////////////////////////////////////////////////////////////////////////
 // Main
 
-
-
-class A {
-
-protected:
-    void fooA(){ cout << "LOL" << endl;}
-public:
-    typedef void (A:: *MMB_FCN)();
-    MMB_FCN getFcnAdddr() {return &A::fooA; }
-};
-class B: public A {public: void fooB() {A::fooA();} };
-
-
 int main()
 {
-    A a;
-
-    A::MMB_FCN f = a.getFcnAdddr();
-    (a.*f)();
-
     Point p;
     p.Load("point.xml");
     p.x = 10;
